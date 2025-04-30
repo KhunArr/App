@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Download Center</title>
+    <style>
+        :root {
+            --primary-color: #4a6cf7;
+            --secondary-color: #6c757d;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+            --success-color: #28a745;
+            --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f4f7ff;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .header-title {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .header-subtitle {
+            font-size: 18px;
+            color: var(--secondary-color);
+        }
+        
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .app-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .app-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .app-image {
+            height: 200px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f7ff;
+            padding: 20px;
+        }
+        
+        .app-image img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        
+        .app-info {
+            padding: 20px;
+        }
+        
+        .app-name {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .app-description {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .app-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .app-rating {
+            display: flex;
+            align-items: center;
+        }
+        
+        .stars {
+            color: #ffc107;
+            margin-right: 5px;
+        }
+        
+        .app-size {
+            color: var(--secondary-color);
+        }
+        
+        .app-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .download-btn {
+            flex-grow: 1;
+            padding: 10px;
+            text-align: center;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background-color: #3456d8;
+        }
+        
+        .more-info-btn {
+            padding: 10px;
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .more-info-btn:hover {
+            background-color: #f0f4ff;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px 0;
+            color: var(--secondary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .app-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="header-title">App Download Center</h1>
+            <p class="header-subtitle">သင့်လိုအပ်ချက်နှင့် ကိုက်ညီမည့် အက်ပ်များကို ဒီနေရာမှ ဒေါင်းလုဒ်ပြုလုပ်နိုင်ပါသည်</p>
+        </header>
+        
+        <div class="app-grid">
+            <!-- App 1 -->
+            <div class="app-card">
+                <div class="app-image">
+                    <img src="/api/placeholder/250/250" alt="Myanmar Dictionary App">
+                </div>
+                <div class="app-info">
+                    <h2 class="app-name">မြန်မာ အဘိဓာန်</h2>
+                    <p class="app-description">အွန်လိုင်းနှင့် အော့ဖ်လိုင်းဖြင့် အသုံးပြုနိုင်သည့် မြန်မာစကားလုံးများကို အဓိပ္ပာယ်ဖွင့်ဆိုပေးသော အက်ပ်ဖြစ်သည်။</p>
+                    <div class="app-meta">
+                        <div class="app-rating">
+                            <span class="stars">★★★★★</span> 4.8
+                        </div>
+                        <div class="app-size">25 MB</div>
+                    </div>
+                    <div class="app-buttons">
+                        <button class="download-btn">ဒေါင်းလုဒ်ယူရန်</button>
+                        <button class="more-info-btn">အသေးစိတ်</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- App 2 -->
+            <div class="app-card">
+                <div class="app-image">
+                    <img src="/api/placeholder/250/250" alt="Myanmar Music Player">
+                </div>
+                <div class="app-info">
+                    <h2 class="app-name">မြန်မာ Music Player</h2>
+                    <p class="app-description">မြန်မာသီချင်းများကို စုစည်းထားသော မြန်မာ့ဂီတ အက်ပလီကေးရှင်း။ ဖုန်းမှ တိုက်ရိုက်နားဆင်နိုင်သည်။</p>
+                    <div class="app-meta">
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span> 4.2
+                        </div>
+                        <div class="app-size">42 MB</div>
+                    </div>
+                    <div class="app-buttons">
+                        <button class="download-btn">ဒေါင်းလုဒ်ယူရန်</button>
+                        <button class="more-info-btn">အသေးစိတ်</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- App 3 -->
+            <div class="app-card">
+                <div class="app-image">
+                    <img src="/api/placeholder/250/250" alt="Myanmar News App">
+                </div>
+                <div class="app-info">
+                    <h2 class="app-name">သတင်းဒေါင်း</h2>
+                    <p class="app-description">မြန်မာနိုင်ငံမှ နောက်ဆုံးရ သတင်းများကို အချိန်နှင့်တပြေးညီ ဖတ်ရှုနိုင်မည့် သတင်းအက်ပ်</p>
+                    <div class="app-meta">
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span> 4.0
+                        </div>
+                        <div class="app-size">18 MB</div>
+                    </div>
+                    <div class="app-buttons">
+                        <button class="download-btn">ဒေါင်းလုဒ်ယူရန်</button>
+                        <button class="more-info-btn">အသေးစိတ်</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- App 4 -->
+            <div class="app-card">
+                <div class="app-image">
+                    <img src="/api/placeholder/250/250" alt="Myanmar Calendar">
+                </div>
+                <div class="app-info">
+                    <h2 class="app-name">မြန်မာပြက္ခဒိန်</h2>
+                    <p class="app-description">မြန်မာရက်စွဲ၊ ဗုဒ္ဓဟူးနေ့များ၊ အားလပ်ရက်များနှင့် အခြားအရေးကြီးရက်များကို ဖော်ပြပေးသည့် အက်ပ်</p>
+                    <div class="app-meta">
+                        <div class="app-rating">
+                            <span class="stars">★★★★★</span> 4.9
+                        </div>
+                        <div class="app-size">15 MB</div>
+                    </div>
+                    <div class="app-buttons">
+                        <button class="download-btn">ဒေါင်းလုဒ်ယူရန်</button>
+                        <button class="more-info-btn">အသေးစိတ်</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- App 5 -->
+            <div class="app-card">
+                <div class="app-image">
+                    <img src="/api/placeholder/250/250" alt="Myanmar Food Recipes">
+                </div>
+                <div class="app-info">
+                    <h2 class="app-name">မြန်မာ ချက်ပြုတ်နည်း</h2>
+                    <p class="app-description">မြန်မာဟင်းလျာများကို လွယ်ကူရိုးရှင်းစွာ ချက်ပြုတ်နည်းများ ပါဝင်သော အက်ပလီကေးရှင်း</p>
+                    <div class="app-meta">
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span> 4.3
+                        </div>
+                        <div class="app-size">38 MB</div>
+                    </div>
+                    <div class="app-buttons">
+                        <button class="download-btn">ဒေါင်းလုဒ်ယူရန်</button>
+                        <button class="more-info-btn">အသေးစိတ်</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2025 App Download Center - အက်ပ်အားလုံးကို မြန်မာဘာသာဖြင့် အသုံးပြုနိုင်ပါသည်</p>
+        </footer>
+    </div>
+</body>
+</html>
